@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8454041C24FFA39600139685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041B24FFA39600139685 /* AppDelegate.swift */; };
-		8454041E24FFA39600139685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041D24FFA39600139685 /* SceneDelegate.swift */; };
 		8454042024FFA39600139685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041F24FFA39600139685 /* ViewController.swift */; };
 		8454042324FFA39600139685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454042124FFA39600139685 /* Main.storyboard */; };
 		8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454042424FFA39600139685 /* ToDo.xcdatamodeld */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		8454041824FFA39600139685 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454041B24FFA39600139685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8454041D24FFA39600139685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8454041F24FFA39600139685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8454042224FFA39600139685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8454042524FFA39600139685 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				8454041B24FFA39600139685 /* AppDelegate.swift */,
-				8454041D24FFA39600139685 /* SceneDelegate.swift */,
 				8454041F24FFA39600139685 /* ViewController.swift */,
 				8454042124FFA39600139685 /* Main.storyboard */,
 				8454042724FFA39900139685 /* Assets.xcassets */,
@@ -143,7 +140,6 @@
 			files = (
 				8454042024FFA39600139685 /* ViewController.swift in Sources */,
 				8454041C24FFA39600139685 /* AppDelegate.swift in Sources */,
-				8454041E24FFA39600139685 /* SceneDelegate.swift in Sources */,
 				8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -290,6 +286,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
