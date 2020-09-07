@@ -23,4 +23,10 @@ class TDMainMenuCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var cellContentView: TDMenuItemView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.cellContentView.clear()
+    }
 }

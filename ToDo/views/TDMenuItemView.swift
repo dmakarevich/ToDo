@@ -41,4 +41,10 @@ class TDMenuItemView: TDDesignableView {
             contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
     }
+
+    func clear() {
+        self.iconImage.image = nil
+        self.titleLabel.text = ""
+        self.subtiteLabel.text = ""
+    }
 }
