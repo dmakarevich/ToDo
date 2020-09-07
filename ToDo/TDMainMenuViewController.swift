@@ -14,7 +14,7 @@ class TDMainMenuViewController: UIViewController {
     private let itemsPerRow: CGFloat = 2
     private let interItemInset: CGFloat = 20
     private let cellHeight: CGFloat = 180
-    private let sectionInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+    private let sectionInsets = UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
     
     private var menuItems = [TDCategoryMenu]()
     
