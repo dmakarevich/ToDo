@@ -31,24 +31,22 @@ class TDMainMenuViewController: UIViewController {
         
         self.navigationItem.title = self.fileName
 
-        if (self.getDataForMainMenu()) {
-            self.collectionView.reloadData()
-        }
+        self.menuItems = self.getData(by: self.fileName)
+        self.collectionView.reloadData()
     }
     
     //MARK: - Get data method
-    private func getDataForMainMenu() -> Bool {
-        guard let jsonData = Utility.readLocalJsonFile(forName: fileName) else {
-            return false
+    private func getData(by name: String) -> [TDCategoryMenu] {
+        guard let jsonData = Utility.readLocalJsonFile(forName: name) else {
+            return []
         }
         let categoryList = Utility.parseJson(data: jsonData, ofType: TDCategoryList.self)
         
         guard let menu = categoryList?.lists else {
-            return false
+            return []
         }
-        self.menuItems = menu
         
-        return true
+        return menu
     }
 }
 
