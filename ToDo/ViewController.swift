@@ -18,31 +18,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if (self.getDataForMainMenu()) {
-            self.menuData.forEach {
-                print("Title: ", $0.title)
-                print("Image: ", $0.image)
-                print("---------------------")
-            }
-            print("All good!")
-        } else {
-            print("Menu is empty..")
+        self.menuData = self.getData(by: self.fileName)
+        self.menuData.forEach {
+            print("Title: ", $0.title)
+            print("Image: ", $0.image)
+            print("---------------------")
         }
     }
     
     //MARK: - Get data method
-    private func getDataForMainMenu() -> Bool {
-        guard let jsonData = Utility.readLocalJsonFile(forName: fileName) else {
-            return false
+    private func getData(by name: String) -> [TDCategoryMenu] {
+        guard let jsonData = Utility.readLocalJsonFile(forName: name) else {
+            return []
         }
         let categoryList = Utility.parseJson(data: jsonData, ofType: TDCategoryList.self)
         
         guard let menu = categoryList?.lists else {
-            return false
+            return []
         }
-        self.menuData = menu
         
-        return true
+        return menu
     }
 }
-
