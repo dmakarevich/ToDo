@@ -58,8 +58,8 @@ extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView
-            .dequeueReusableCell(withReuseIdentifier: TDMainMenuCell.reuseIdentifier,
-                                 for: indexPath) as? TDMainMenuCell ?? TDMainMenuCell()
+            .dequeueReusableCell(withReuseIdentifier: MainMenuCell.reuseIdentifier,
+                                 for: indexPath) as? MainMenuCell ?? MainMenuCell()
         cell.cellContentView.set(menuItem: menuItems[indexPath.row])
 
         return cell

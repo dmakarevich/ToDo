@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841D8A8725011ED60004B4A4 /* TDInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8A8625011ED60004B4A4 /* TDInterface.swift */; };
-		8446EC8C2502189F001E3523 /* TDMenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446EC8B2502189F001E3523 /* TDMenuItemView.xib */; };
-		8446EC8E25021C7D001E3523 /* TDMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8D25021C7D001E3523 /* TDMenuItemView.swift */; };
-		8446EC9025021F68001E3523 /* TDDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8F25021F68001E3523 /* TDDesignableView.swift */; };
-		8446EC9225023236001E3523 /* TDHeaderMainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC9125023236001E3523 /* TDHeaderMainMenuView.swift */; };
+		841D8A8725011ED60004B4A4 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8A8625011ED60004B4A4 /* Interface.swift */; };
+		8446EC8C2502189F001E3523 /* MenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446EC8B2502189F001E3523 /* MenuItemView.xib */; };
+		8446EC8E25021C7D001E3523 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8D25021C7D001E3523 /* MenuItemView.swift */; };
+		8446EC9025021F68001E3523 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8F25021F68001E3523 /* DesignableView.swift */; };
+		8446EC9225023236001E3523 /* HeaderMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC9125023236001E3523 /* HeaderMenuView.swift */; };
 		8454041C24FFA39600139685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041B24FFA39600139685 /* AppDelegate.swift */; };
-		8454042024FFA39600139685 /* TDMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041F24FFA39600139685 /* TDMainMenuViewController.swift */; };
+		8454042024FFA39600139685 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041F24FFA39600139685 /* MenuViewController.swift */; };
 		8454042324FFA39600139685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454042124FFA39600139685 /* Main.storyboard */; };
 		8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454042424FFA39600139685 /* ToDo.xcdatamodeld */; };
 		8454042824FFA39900139685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454042724FFA39900139685 /* Assets.xcassets */; };
@@ -21,18 +21,19 @@
 		8454043324FFB08700139685 /* Lists.json in Resources */ = {isa = PBXBuildFile; fileRef = 8454043224FFB08700139685 /* Lists.json */; };
 		8454043624FFB0D700139685 /* TDCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454043524FFB0D700139685 /* TDCategoryMenu.swift */; };
 		8481B7072500E84D00655FA9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481B7062500E84D00655FA9 /* Utility.swift */; };
-		8486626A2501A9DD00D2D989 /* TDMainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848662692501A9DD00D2D989 /* TDMainMenuCell.swift */; };
+		8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848662692501A9DD00D2D989 /* MainMenuCell.swift */; };
+		848BFDBC250B788800B49DB5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BFDBB250B788800B49DB5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841D8A8625011ED60004B4A4 /* TDInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDInterface.swift; sourceTree = "<group>"; };
-		8446EC8B2502189F001E3523 /* TDMenuItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDMenuItemView.xib; sourceTree = "<group>"; };
-		8446EC8D25021C7D001E3523 /* TDMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDMenuItemView.swift; sourceTree = "<group>"; };
-		8446EC8F25021F68001E3523 /* TDDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDesignableView.swift; sourceTree = "<group>"; };
-		8446EC9125023236001E3523 /* TDHeaderMainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDHeaderMainMenuView.swift; sourceTree = "<group>"; };
+		841D8A8625011ED60004B4A4 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		8446EC8B2502189F001E3523 /* MenuItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemView.xib; sourceTree = "<group>"; };
+		8446EC8D25021C7D001E3523 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		8446EC8F25021F68001E3523 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		8446EC9125023236001E3523 /* HeaderMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenuView.swift; sourceTree = "<group>"; };
 		8454041824FFA39600139685 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454041B24FFA39600139685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8454041F24FFA39600139685 /* TDMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDMainMenuViewController.swift; sourceTree = "<group>"; };
+		8454041F24FFA39600139685 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8454042224FFA39600139685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8454042524FFA39600139685 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		8454042724FFA39900139685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +42,8 @@
 		8454043224FFB08700139685 /* Lists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lists.json; sourceTree = "<group>"; };
 		8454043524FFB0D700139685 /* TDCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCategoryMenu.swift; sourceTree = "<group>"; };
 		8481B7062500E84D00655FA9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		848662692501A9DD00D2D989 /* TDMainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDMainMenuCell.swift; sourceTree = "<group>"; };
+		848662692501A9DD00D2D989 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
+		848BFDBB250B788800B49DB5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		841D8A7F25010F3E0004B4A4 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				848662692501A9DD00D2D989 /* TDMainMenuCell.swift */,
+				848662692501A9DD00D2D989 /* MainMenuCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -66,10 +68,10 @@
 		8446EC8A25021866001E3523 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				8446EC8B2502189F001E3523 /* TDMenuItemView.xib */,
-				8446EC8D25021C7D001E3523 /* TDMenuItemView.swift */,
-				8446EC8F25021F68001E3523 /* TDDesignableView.swift */,
-				8446EC9125023236001E3523 /* TDHeaderMainMenuView.swift */,
+				8446EC8B2502189F001E3523 /* MenuItemView.xib */,
+				8446EC8D25021C7D001E3523 /* MenuItemView.swift */,
+				8446EC8F25021F68001E3523 /* DesignableView.swift */,
+				8446EC9125023236001E3523 /* HeaderMenuView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -99,13 +101,14 @@
 				8454043424FFB09C00139685 /* models */,
 				8454043224FFB08700139685 /* Lists.json */,
 				8454041B24FFA39600139685 /* AppDelegate.swift */,
-				8454041F24FFA39600139685 /* TDMainMenuViewController.swift */,
+				8454041F24FFA39600139685 /* MenuViewController.swift */,
 				8454042124FFA39600139685 /* Main.storyboard */,
 				8454042724FFA39900139685 /* Assets.xcassets */,
 				8454042924FFA39900139685 /* LaunchScreen.storyboard */,
 				8454042C24FFA39900139685 /* Info.plist */,
 				8454042424FFA39600139685 /* ToDo.xcdatamodeld */,
-				841D8A8625011ED60004B4A4 /* TDInterface.swift */,
+				841D8A8625011ED60004B4A4 /* Interface.swift */,
+				848BFDBB250B788800B49DB5 /* DetailViewController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -187,7 +190,7 @@
 				8454042B24FFA39900139685 /* LaunchScreen.storyboard in Resources */,
 				8454043324FFB08700139685 /* Lists.json in Resources */,
 				8454042824FFA39900139685 /* Assets.xcassets in Resources */,
-				8446EC8C2502189F001E3523 /* TDMenuItemView.xib in Resources */,
+				8446EC8C2502189F001E3523 /* MenuItemView.xib in Resources */,
 				8454042324FFA39600139685 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,15 +203,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8481B7072500E84D00655FA9 /* Utility.swift in Sources */,
-				8486626A2501A9DD00D2D989 /* TDMainMenuCell.swift in Sources */,
-				8454042024FFA39600139685 /* TDMainMenuViewController.swift in Sources */,
+				8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */,
+				8454042024FFA39600139685 /* MenuViewController.swift in Sources */,
+				848BFDBC250B788800B49DB5 /* DetailViewController.swift in Sources */,
 				8454041C24FFA39600139685 /* AppDelegate.swift in Sources */,
 				8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */,
-				841D8A8725011ED60004B4A4 /* TDInterface.swift in Sources */,
-				8446EC8E25021C7D001E3523 /* TDMenuItemView.swift in Sources */,
-				8446EC9225023236001E3523 /* TDHeaderMainMenuView.swift in Sources */,
+				841D8A8725011ED60004B4A4 /* Interface.swift in Sources */,
+				8446EC8E25021C7D001E3523 /* MenuItemView.swift in Sources */,
+				8446EC9225023236001E3523 /* HeaderMenuView.swift in Sources */,
 				8454043624FFB0D700139685 /* TDCategoryMenu.swift in Sources */,
-				8446EC9025021F68001E3523 /* TDDesignableView.swift in Sources */,
+				8446EC9025021F68001E3523 /* DesignableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
