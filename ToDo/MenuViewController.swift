@@ -11,11 +11,43 @@ import UIKit
 class MenuViewController: UIViewController {
     //MARK: - Variables
     private let fileName = "Lists"
-    private let itemsPerRow: CGFloat = 2
-    private let interItemInset: CGFloat = 20
-    private let sectionInsets = UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
-    
     private var menuItems = [TDCategoryMenu]()
+    
+    private enum CollectionViewInsets {
+        case top, left, bottom, right
+        case itemsPerRow
+        case interItemInset
+        case lineInset
+        
+        private static let _itemsPerRow: CGFloat = 2
+        private static let _interItemInset: CGFloat = 20
+        private static let _lineInset: CGFloat = 20
+        private static let _sectionInsets = UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
+
+        static func getInset(by type: CollectionViewInsets) -> CGFloat {
+            switch type {
+                case .itemsPerRow:
+                    return _itemsPerRow
+                case .interItemInset:
+                    return _interItemInset
+                case .lineInset:
+                    return _lineInset
+                case .top:
+                    return _sectionInsets.top
+                case .left:
+                    return _sectionInsets.left
+                case .bottom:
+                    return _sectionInsets.bottom
+                case .right:
+                    return _sectionInsets.right
+            }
+        }
+
+        static func geEdgeInset() -> UIEdgeInsets {
+
+            return _sectionInsets
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -52,12 +84,12 @@ extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
 
-        return self.menuItems.count
+        return menuItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView
+        let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: MainMenuCell.reuseIdentifier,
                                  for: indexPath) as? MainMenuCell ?? MainMenuCell()
         cell.cellContentView.set(menuItem: menuItems[indexPath.row])
@@ -71,8 +103,13 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let totalSpacing = self.interItemInset + self.sectionInsets.left * self.itemsPerRow
-        let width = (self.view.frame.width - totalSpacing) / self.itemsPerRow
+        let itemsPerRow = CollectionViewInsets.getInset(by: .itemsPerRow)
+        let interItemInset = CollectionViewInsets.getInset(by: .interItemInset)
+        let leftSpacing = CollectionViewInsets.getInset(by: .left)
+        let rightSpacing = CollectionViewInsets.getInset(by: .right)
+        
+        let totalSpacing = leftSpacing + rightSpacing + interItemInset
+        let width = (self.view.frame.width - totalSpacing) / itemsPerRow
 
         return CGSize(width: width, height: width)
     }
@@ -81,20 +118,20 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
-        return self.interItemInset
+        return CollectionViewInsets.getInset(by: .lineInset)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 
-        return self.interItemInset
+        return CollectionViewInsets.getInset(by: .interItemInset)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return self.sectionInsets
+        return CollectionViewInsets.geEdgeInset()
     }
 }
