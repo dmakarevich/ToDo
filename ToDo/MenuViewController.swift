@@ -18,34 +18,34 @@ class MenuViewController: UIViewController {
         case itemsPerRow
         case interItemInset
         case lineInset
-        
-        private static let _itemsPerRow: CGFloat = 2
-        private static let _interItemInset: CGFloat = 20
-        private static let _lineInset: CGFloat = 20
-        private static let _sectionInsets = UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
+
+        private static let cellsPerRow: CGFloat = 2
+        private static let interItem: CGFloat = 20
+        private static let line: CGFloat = 20
+        private static let sectionInsets = UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
 
         static func getInset(by type: CollectionViewInsets) -> CGFloat {
             switch type {
-                case .itemsPerRow:
-                    return _itemsPerRow
-                case .interItemInset:
-                    return _interItemInset
-                case .lineInset:
-                    return _lineInset
-                case .top:
-                    return _sectionInsets.top
-                case .left:
-                    return _sectionInsets.left
-                case .bottom:
-                    return _sectionInsets.bottom
-                case .right:
-                    return _sectionInsets.right
+            case .itemsPerRow:
+                return cellsPerRow
+            case .interItemInset:
+                return interItem
+            case .lineInset:
+                return line
+            case .top:
+                return sectionInsets.top
+            case .left:
+                return sectionInsets.left
+            case .bottom:
+                return sectionInsets.bottom
+            case .right:
+                return sectionInsets.right
             }
         }
 
         static func geEdgeInset() -> UIEdgeInsets {
 
-            return _sectionInsets
+            return sectionInsets
         }
     }
     
@@ -101,8 +101,8 @@ extension MenuViewController: UICollectionViewDataSource {
 // MARK: - Collection View Flow Layout Delegate
 extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
-                      layout collectionViewLayout: UICollectionViewLayout,
-                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow = CollectionViewInsets.getInset(by: .itemsPerRow)
         let interItemInset = CollectionViewInsets.getInset(by: .interItemInset)
         let leftSpacing = CollectionViewInsets.getInset(by: .left)
@@ -115,8 +115,8 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView,
-                      layout collectionViewLayout: UICollectionViewLayout,
-                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
         return CollectionViewInsets.getInset(by: .lineInset)
     }
