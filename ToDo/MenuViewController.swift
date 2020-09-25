@@ -77,6 +77,13 @@ class MenuViewController: UIViewController {
         
         return menu
     }
+    
+    //MARK: - Actions
+    @IBAction func addButtonTapped(_ sender: Any) {
+        guard let vc = self.storyboard?
+                .instantiateViewController(withIdentifier: "CreateNewTaskViewController") as? CreateNewTaskViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - Collection View Datasource Methods
