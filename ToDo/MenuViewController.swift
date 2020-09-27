@@ -80,8 +80,11 @@ class MenuViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func addButtonTapped(_ sender: Any) {
-        guard let vc = self.storyboard?
-                .instantiateViewController(withIdentifier: "CreateNewTaskViewController") as? CreateNewTaskViewController else { return }
+        guard let vc = self
+                .storyboard?
+                .instantiateViewController(withIdentifier: Constants.Storyboard.createNewTaskVC) as? CreateNewTaskViewController else {
+            return
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
