@@ -106,7 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="6QK-6Z-Wgr"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6QK-6Z-Wgr" firstAttribute="bottom" secondItem="nUn-lj-lEr" secondAttribute="bottom" id="8gW-cf-soW"/>
+                            <constraint firstAttribute="bottom" secondItem="nUn-lj-lEr" secondAttribute="bottom" id="8gW-cf-soW"/>
                             <constraint firstItem="nUn-lj-lEr" firstAttribute="top" secondItem="6QK-6Z-Wgr" secondAttribute="top" id="OPb-X0-DPh"/>
                             <constraint firstItem="6QK-6Z-Wgr" firstAttribute="trailing" secondItem="Qb1-Ec-E0y" secondAttribute="trailing" constant="20" id="QqT-1M-anL"/>
                             <constraint firstItem="6QK-6Z-Wgr" firstAttribute="bottom" secondItem="Qb1-Ec-E0y" secondAttribute="bottom" constant="10" id="lap-Vc-dal"/>
@@ -139,7 +139,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-Qb-Iiy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMJ-ta-ZWt">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMJ-ta-ZWt" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you planning?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fua-2n-gVb">
@@ -165,20 +165,24 @@
                                                     <constraint firstAttribute="height" constant="1" id="pTz-P6-P60"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVH-h3-vK4">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVH-h3-vK4" userLabel="DateButton">
                                                 <rect key="frame" x="16" y="134.5" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="A"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" systemColor="linkColor"/>
+                                                </state>
                                             </button>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xqv-mk-EgE">
                                                 <rect key="frame" x="50" y="140" width="36" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1q-lV-hZu">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1q-lV-hZu" userLabel="CategoryButton">
                                                 <rect key="frame" x="16" y="167.5" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="A"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" systemColor="linkColor"/>
+                                                </state>
                                             </button>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEA-bq-Lp6">
                                                 <rect key="frame" x="50" y="173.5" width="67" height="21"/>
@@ -226,30 +230,33 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="kEr-hI-ERc"/>
                                 <constraints>
-                                    <constraint firstItem="BMJ-ta-ZWt" firstAttribute="centerX" secondItem="LVu-Qb-Iiy" secondAttribute="centerX" id="Fcy-Rp-yNW"/>
+                                    <constraint firstItem="BMJ-ta-ZWt" firstAttribute="height" secondItem="LVu-Qb-Iiy" secondAttribute="height" priority="250" id="63N-ug-3PN"/>
                                     <constraint firstAttribute="bottom" secondItem="BMJ-ta-ZWt" secondAttribute="bottom" id="N88-w7-uBR"/>
-                                    <constraint firstItem="BMJ-ta-ZWt" firstAttribute="height" secondItem="LVu-Qb-Iiy" secondAttribute="height" priority="250" id="TaD-Le-9Zz"/>
                                     <constraint firstAttribute="trailing" secondItem="BMJ-ta-ZWt" secondAttribute="trailing" id="a6f-gs-cGa"/>
-                                    <constraint firstItem="BMJ-ta-ZWt" firstAttribute="width" secondItem="LVu-Qb-Iiy" secondAttribute="width" priority="250" id="iC7-dn-dGi"/>
+                                    <constraint firstItem="BMJ-ta-ZWt" firstAttribute="width" secondItem="LVu-Qb-Iiy" secondAttribute="width" id="iC7-dn-dGi"/>
                                     <constraint firstItem="BMJ-ta-ZWt" firstAttribute="top" secondItem="LVu-Qb-Iiy" secondAttribute="top" id="pVB-sA-1QF"/>
                                     <constraint firstItem="BMJ-ta-ZWt" firstAttribute="leading" secondItem="LVu-Qb-Iiy" secondAttribute="leading" id="waQ-jH-4H4"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njk-6X-3ry"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LVu-Qb-Iiy" firstAttribute="leading" secondItem="njk-6X-3ry" secondAttribute="leading" id="Kmt-s7-27e"/>
                             <constraint firstItem="LVu-Qb-Iiy" firstAttribute="top" secondItem="njk-6X-3ry" secondAttribute="top" id="Mmb-3R-sh8"/>
                             <constraint firstItem="LVu-Qb-Iiy" firstAttribute="trailing" secondItem="njk-6X-3ry" secondAttribute="trailing" id="T11-LE-XY6"/>
-                            <constraint firstItem="LVu-Qb-Iiy" firstAttribute="bottom" secondItem="Bf3-r7-Dpe" secondAttribute="bottom" id="l6T-1Y-Yzi"/>
+                            <constraint firstItem="LVu-Qb-Iiy" firstAttribute="bottom" secondItem="njk-6X-3ry" secondAttribute="bottom" id="l6T-1Y-Yzi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomCreateButtonConstraint" destination="qau-Y6-MKE" id="8BV-pR-DwE"/>
                         <outlet property="categoryLabel" destination="dEA-bq-Lp6" id="z6A-XC-xnw"/>
                         <outlet property="createButton" destination="vBm-2D-ReV" id="NqE-Gp-reN"/>
                         <outlet property="dateLabel" destination="Xqv-mk-EgE" id="oln-id-THb"/>
+                        <outlet property="scrollView" destination="LVu-Qb-Iiy" id="1Sz-ca-sg9"/>
                         <outlet property="taskNameView" destination="dqn-ZN-iq3" id="8s8-Df-wqf"/>
                     </connections>
                 </viewController>
@@ -344,9 +351,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
