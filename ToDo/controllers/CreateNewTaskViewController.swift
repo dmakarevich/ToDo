@@ -9,6 +9,7 @@
 import UIKit
 
 class CreateNewTaskViewController: UIViewController {
+    //MARK: - Variables
     @IBOutlet weak var taskNameView: UITextView!
     @IBOutlet weak var dateLabel: UITextField!
     @IBOutlet weak var categoryLabel: UITextField!
@@ -16,13 +17,24 @@ class CreateNewTaskViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var bottomCreateButtonConstraint: NSLayoutConstraint!
-    
+
+    private lazy var  rightBarButtonItem: UIBarButtonItem = {
+        let item = UIBarButtonItem(image: UIImage(named: "close"),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(self.closeButtonTapped))
+        item.tintColor = .black
+
+        return item
+    }()
+
+    //MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "New Task"
         self.addKeyboardShowListeners()
+        self.setupNavigationBar()
     }
 
     //MARK: - Selectors
@@ -31,19 +43,21 @@ class CreateNewTaskViewController: UIViewController {
         guard let keyboardNSValue: NSValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         var keyboardFrame: CGRect = keyboardNSValue.cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        // обращение к вашему скроллу
+
         self.bottomCreateButtonConstraint.constant = keyboardFrame.height
         self.scrollView.contentInset.bottom = -keyboardFrame.height
     }
 
     @objc func keybordWillHide(_ notification: Notification) {
-        // обращение к вашему скроллу
         self.scrollView.contentInset.bottom = 0
         self.bottomCreateButtonConstraint.constant = 0
-        
     }
     
-    //MARK: -
+    @objc func closeButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    //MARK: - Utils
     private func addKeyboardShowListeners() {
         NotificationCenter
             .default
@@ -57,5 +71,11 @@ class CreateNewTaskViewController: UIViewController {
                          selector: #selector(keybordWillHide),
                          name: UIResponder.keyboardWillHideNotification,
                          object: nil)
+    }
+
+    private func setupNavigationBar() {
+        self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.largeTitleDisplayMode = .never
     }
 }
