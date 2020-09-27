@@ -20,6 +20,9 @@
 		8454042B24FFA39900139685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454042924FFA39900139685 /* LaunchScreen.storyboard */; };
 		8454043324FFB08700139685 /* Lists.json in Resources */ = {isa = PBXBuildFile; fileRef = 8454043224FFB08700139685 /* Lists.json */; };
 		8454043624FFB0D700139685 /* TDCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454043524FFB0D700139685 /* TDCategoryMenu.swift */; };
+		84625FD4252103B00014FA56 /* DatePickerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84625FD3252103B00014FA56 /* DatePickerPopupViewController.swift */; };
+		84625FD7252103EF0014FA56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84625FD6252103EF0014FA56 /* Constants.swift */; };
+		84625FDA2521054D0014FA56 /* CategoryPickerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84625FD92521054D0014FA56 /* CategoryPickerPopupViewController.swift */; };
 		8481B7072500E84D00655FA9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481B7062500E84D00655FA9 /* Utility.swift */; };
 		8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848662692501A9DD00D2D989 /* MainMenuCell.swift */; };
 		848A866F251E2E910075669A /* CreateNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A866E251E2E910075669A /* CreateNewTaskViewController.swift */; };
@@ -41,6 +44,9 @@
 		8454042C24FFA39900139685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8454043224FFB08700139685 /* Lists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lists.json; sourceTree = "<group>"; };
 		8454043524FFB0D700139685 /* TDCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCategoryMenu.swift; sourceTree = "<group>"; };
+		84625FD3252103B00014FA56 /* DatePickerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupViewController.swift; sourceTree = "<group>"; };
+		84625FD6252103EF0014FA56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84625FD92521054D0014FA56 /* CategoryPickerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerPopupViewController.swift; sourceTree = "<group>"; };
 		8481B7062500E84D00655FA9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		848662692501A9DD00D2D989 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		848A866E251E2E910075669A /* CreateNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8481B7062500E84D00655FA9 /* Utility.swift */,
+				84625FD6252103EF0014FA56 /* Constants.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -133,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				848A866E251E2E910075669A /* CreateNewTaskViewController.swift */,
+				84625FD3252103B00014FA56 /* DatePickerPopupViewController.swift */,
+				84625FD92521054D0014FA56 /* CategoryPickerPopupViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -211,12 +220,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8481B7072500E84D00655FA9 /* Utility.swift in Sources */,
+				84625FD4252103B00014FA56 /* DatePickerPopupViewController.swift in Sources */,
 				8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */,
 				8454042024FFA39600139685 /* MenuViewController.swift in Sources */,
 				8454041C24FFA39600139685 /* AppDelegate.swift in Sources */,
 				8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */,
 				848A866F251E2E910075669A /* CreateNewTaskViewController.swift in Sources */,
+				84625FD7252103EF0014FA56 /* Constants.swift in Sources */,
 				841D8A8725011ED60004B4A4 /* Interface.swift in Sources */,
+				84625FDA2521054D0014FA56 /* CategoryPickerPopupViewController.swift in Sources */,
 				8446EC8E25021C7D001E3523 /* MenuItemView.swift in Sources */,
 				8446EC9225023236001E3523 /* HeaderMenuView.swift in Sources */,
 				8454043624FFB0D700139685 /* TDCategoryMenu.swift in Sources */,

@@ -33,6 +33,7 @@ class CreateNewTaskViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "New Task"
+        self.dateLabel.text = Utility.dateToString()
         self.addKeyboardShowListeners()
         self.setupNavigationBar()
     }
@@ -55,6 +56,20 @@ class CreateNewTaskViewController: UIViewController {
     
     @objc func closeButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    //MARK: - Actions
+    @IBAction func dateButtonTapped(_ sender: Any) {
+        guard let vc = self
+                .storyboard?
+                .instantiateViewController(withIdentifier: Constants.Storyboard.datePickerVC) as? DatePickerPopupViewController else {
+            return
+        }
+        vc.completionHandler = {[self] (date) in
+            self.dateLabel.text = Utility.dateToString(date: date)
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 
     //MARK: - Utils
