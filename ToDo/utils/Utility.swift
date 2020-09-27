@@ -38,4 +38,15 @@ struct Utility {
 
         return list
     }
+
+    //MARK: - Converting Date to String
+    static func dateToString(date: Date? = Date()) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM HH:mm"
+        guard let date = date else {
+            return formatter.string(from: Date())
+        }
+
+        return formatter.string(from: date)
+    }
 }
