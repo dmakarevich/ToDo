@@ -25,8 +25,9 @@ class DatePickerPopupViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func doneButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true) { [self] in
-            self.completionHandler?(datePicker.date)
+        self.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
+            self.completionHandler?(self.datePicker.date)
         }
     }
 }

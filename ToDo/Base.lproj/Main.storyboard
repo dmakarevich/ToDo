@@ -186,6 +186,9 @@
                                                 <state key="normal" title="A">
                                                     <color key="titleColor" systemColor="linkColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryButtonTapped:" destination="Cem-qc-27k" eventType="touchUpInside" id="N8b-eY-X2F"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEA-bq-Lp6">
                                                 <rect key="frame" x="50" y="173.5" width="67" height="21"/>
@@ -339,7 +342,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owv-5q-U7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2349" y="95"/>
+            <point key="canvasLocation" x="2254" y="95"/>
+        </scene>
+        <!--Category Picker Popup View Controller-->
+        <scene sceneID="pxP-Dl-rdT">
+            <objects>
+                <viewController storyboardIdentifier="CategoryPickerPopupViewController" id="nMI-NO-Fec" customClass="CategoryPickerPopupViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bwH-wf-jY2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sq6-mG-v1n" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8X-bJ-nrF" customClass="DesignableView" customModule="ToDo" customModuleProvider="target">
+                                <rect key="frame" x="4" y="174" width="312" height="220"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0T-mC-ALE">
+                                        <rect key="frame" x="0.0" y="0.0" width="312" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="ggY-4Q-2jj"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <button opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrN-s5-pet">
+                                        <rect key="frame" x="0.0" y="170" width="312" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="g7b-iG-Kl0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="nMI-NO-Fec" eventType="touchUpInside" id="jgR-vv-bDx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SrN-s5-pet" firstAttribute="top" secondItem="M0T-mC-ALE" secondAttribute="bottom" constant="-20" id="6rW-60-KTY"/>
+                                    <constraint firstAttribute="leading" secondItem="SrN-s5-pet" secondAttribute="leading" id="81G-0I-WEG"/>
+                                    <constraint firstAttribute="bottom" secondItem="SrN-s5-pet" secondAttribute="bottom" id="GGf-rY-bfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="M0T-mC-ALE" secondAttribute="trailing" id="bG6-Yb-Jar"/>
+                                    <constraint firstAttribute="trailing" secondItem="SrN-s5-pet" secondAttribute="trailing" id="dIH-Ma-xCQ"/>
+                                    <constraint firstItem="M0T-mC-ALE" firstAttribute="top" secondItem="W8X-bJ-nrF" secondAttribute="top" id="gWp-hs-dku"/>
+                                    <constraint firstItem="M0T-mC-ALE" firstAttribute="leading" secondItem="W8X-bJ-nrF" secondAttribute="leading" id="qao-al-fBe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LZL-TA-olq"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W8X-bJ-nrF" firstAttribute="centerX" secondItem="bwH-wf-jY2" secondAttribute="centerX" id="0Po-GA-Zy3"/>
+                            <constraint firstItem="LZL-TA-olq" firstAttribute="trailing" secondItem="Sq6-mG-v1n" secondAttribute="trailing" id="2H5-T9-7xM"/>
+                            <constraint firstItem="Sq6-mG-v1n" firstAttribute="top" secondItem="LZL-TA-olq" secondAttribute="top" id="FvV-MW-dtm"/>
+                            <constraint firstItem="W8X-bJ-nrF" firstAttribute="leading" secondItem="bwH-wf-jY2" secondAttribute="leading" constant="4" id="UX1-wi-9zd"/>
+                            <constraint firstItem="Sq6-mG-v1n" firstAttribute="leading" secondItem="LZL-TA-olq" secondAttribute="leading" id="YoG-qv-0fM"/>
+                            <constraint firstItem="W8X-bJ-nrF" firstAttribute="centerY" secondItem="bwH-wf-jY2" secondAttribute="centerY" id="e9G-tx-8a2"/>
+                            <constraint firstItem="LZL-TA-olq" firstAttribute="bottom" secondItem="Sq6-mG-v1n" secondAttribute="bottom" id="fe4-mV-fd8"/>
+                            <constraint firstAttribute="trailing" secondItem="W8X-bJ-nrF" secondAttribute="trailing" constant="4" id="vUu-yo-WX9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryPicker" destination="M0T-mC-ALE" id="OlO-36-SRh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="na5-bv-usv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="95"/>
         </scene>
     </scenes>
     <resources>

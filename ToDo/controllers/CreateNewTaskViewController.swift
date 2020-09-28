@@ -72,6 +72,19 @@ class CreateNewTaskViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 
+    @IBAction func categoryButtonTapped(_ sender: Any) {
+        guard let vc = self
+                .storyboard?
+                .instantiateViewController(withIdentifier: Constants.Storyboard.categoryPickerVC) as? CategoryPickerPopupViewController else {
+            return
+        }
+        vc.completionHandler = {[self] (category) in
+            self.categoryLabel.text = category.title
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+
     //MARK: - Utils
     private func addKeyboardShowListeners() {
         NotificationCenter
