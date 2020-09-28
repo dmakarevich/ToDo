@@ -11,26 +11,30 @@ import UIKit
 
 class Interface {
     static let sh = Interface()
-    
-    private lazy var mainViewController = MenuViewController()
-    weak var window: UIWindow?
-    
-    func setup(window: UIWindow) {
-        self.window = window
-        self.window?.rootViewController = mainViewController
-        self.window?.makeKeyAndVisible()
-        
+
+    private(set) var categories = [CategoryMenu]()
+
+    private init() {}
+
+    func setup() {
+        self.categories = self.getData(by: Constants.fileName)
+        NotificationCenter
+            .default
+            .post(name: Constants.NCNames.categories,
+                  object: self)
     }
-    
-    private func setUpNavigationBarStyle() {
-        let navBar = UINavigationBar.appearance()
-        navBar.backgroundColor = .white
-        navBar.tintColor = .black
-        navBar.prefersLargeTitles = true
-        
-        let newNavBar = UINavigationBarAppearance()
-        newNavBar.configureWithDefaultBackground()
-        
-        navBar.scrollEdgeAppearance = newNavBar
+
+    //MARK: - Get data method
+    private func getData(by name: String) -> [CategoryMenu] {
+        guard let jsonData = Utility.readLocalJsonFile(forName: name) else {
+            return []
+        }
+        let categoryList = Utility.parseJson(data: jsonData, ofType: CategoryList.self)
+
+        guard let menu = categoryList?.lists else {
+            return []
+        }
+
+        return menu
     }
 }

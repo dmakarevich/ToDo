@@ -10,8 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     //MARK: - Variables
-    private let fileName = "Lists"
-    private var menuItems = [TDCategoryMenu]()
+    private var menuItems = [CategoryMenu]()
     
     private enum CollectionViewInsets {
         case top, left, bottom, right
@@ -48,36 +47,30 @@ class MenuViewController: UIViewController {
             return sectionInsets
         }
     }
-    
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            self.collectionView.dataSource = self
-            self.collectionView.delegate = self
-        }
-    }
-    
-    //MARK: - Life cycle method(s)
+
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    //MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = self.fileName
-        self.menuItems = self.getData(by: self.fileName)
+        self.navigationItem.title = "Lists"
+        NotificationCenter
+            .default
+            .addObserver(self,
+                         selector: #selector(updateCollectionView),
+                         name: Constants.NCNames.categories,
+                         object: nil)
+        Interface.sh.setup()
     }
     
-    //MARK: - Get data method
-    private func getData(by name: String) -> [TDCategoryMenu] {
-        guard let jsonData = Utility.readLocalJsonFile(forName: name) else {
-            return []
-        }
-        let categoryList = Utility.parseJson(data: jsonData, ofType: TDCategoryList.self)
-        
-        guard let menu = categoryList?.lists else {
-            return []
-        }
-        
-        return menu
+    @objc func updateCollectionView() {
+        self.menuItems = Interface.sh.categories
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.reloadData()
     }
-    
+
     //MARK: - Actions
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let vc = self

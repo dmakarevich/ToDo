@@ -9,6 +9,12 @@
 import Foundation
 
 struct Constants {
+    static let fileName: String = "Lists"
+    
+    struct NCNames {
+        static let categories = Notification.Name("updateCategories")
+    }
+    
     struct Storyboard {
         static let createNewTaskVC = "CreateNewTaskViewController"
         static let datePickerVC = "DatePickerPopupViewController"
