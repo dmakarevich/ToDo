@@ -19,7 +19,7 @@ class CreateNewTaskViewController: UIViewController {
     @IBOutlet weak var bottomCreateButtonConstraint: NSLayoutConstraint!
 
     private lazy var  rightBarButtonItem: UIBarButtonItem = {
-        let item = UIBarButtonItem(image: UIImage(named: "close"),
+        let item = UIBarButtonItem(image: UIImage(named: Constants.Images.close),
                                    style: .plain,
                                    target: self,
                                    action: #selector(self.closeButtonTapped))
@@ -78,7 +78,8 @@ class CreateNewTaskViewController: UIViewController {
                 .instantiateViewController(withIdentifier: Constants.Storyboard.categoryPickerVC) as? CategoryPickerPopupViewController else {
             return
         }
-        vc.completionHandler = {[self] (category) in
+        vc.completionHandler = {[weak self] (category) in
+            guard let self = self else { return }
             self.categoryLabel.text = category.title
         }
         vc.modalPresentationStyle = .overFullScreen

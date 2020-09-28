@@ -20,4 +20,12 @@ struct Constants {
         static let datePickerVC = "DatePickerPopupViewController"
         static let categoryPickerVC = "CategoryPickerPopupViewController"
     }
+
+    struct Images {
+        static let close: String = "close"
+        static let add: String = "add"
+        static let menu: String = "menu-4"
+        static let back: String = "back"
+        static let check: String = "check"
+    }
 }
