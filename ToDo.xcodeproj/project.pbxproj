@@ -12,6 +12,8 @@
 		8446EC8E25021C7D001E3523 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8D25021C7D001E3523 /* MenuItemView.swift */; };
 		8446EC9025021F68001E3523 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC8F25021F68001E3523 /* DesignableView.swift */; };
 		8446EC9225023236001E3523 /* HeaderMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446EC9125023236001E3523 /* HeaderMenuView.swift */; };
+		84477B9B252B0E83001E5DCD /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84477B99252B0E83001E5DCD /* Task+CoreDataClass.swift */; };
+		84477B9C252B0E83001E5DCD /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84477B9A252B0E83001E5DCD /* Task+CoreDataProperties.swift */; };
 		8454041C24FFA39600139685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041B24FFA39600139685 /* AppDelegate.swift */; };
 		8454042024FFA39600139685 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454041F24FFA39600139685 /* MenuViewController.swift */; };
 		8454042324FFA39600139685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454042124FFA39600139685 /* Main.storyboard */; };
@@ -26,6 +28,7 @@
 		8481B7072500E84D00655FA9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481B7062500E84D00655FA9 /* Utility.swift */; };
 		8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848662692501A9DD00D2D989 /* MainMenuCell.swift */; };
 		848A866F251E2E910075669A /* CreateNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A866E251E2E910075669A /* CreateNewTaskViewController.swift */; };
+		84D3A1CA252611A90047B7C5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3A1C9252611A90047B7C5 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,8 @@
 		8446EC8D25021C7D001E3523 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		8446EC8F25021F68001E3523 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		8446EC9125023236001E3523 /* HeaderMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenuView.swift; sourceTree = "<group>"; };
+		84477B99252B0E83001E5DCD /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84477B9A252B0E83001E5DCD /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8454041824FFA39600139685 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454041B24FFA39600139685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8454041F24FFA39600139685 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		8481B7062500E84D00655FA9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		848662692501A9DD00D2D989 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		848A866E251E2E910075669A /* CreateNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskViewController.swift; sourceTree = "<group>"; };
+		84D3A1C9252611A90047B7C5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +107,12 @@
 		8454041A24FFA39600139685 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				84D3A1C82526117F0047B7C5 /* CoreData */,
 				848A866D251E2E160075669A /* controllers */,
 				8446EC8A25021866001E3523 /* views */,
 				841D8A7F25010F3E0004B4A4 /* cells */,
-				8481B7052500E71700655FA9 /* utils */,
 				8454043424FFB09C00139685 /* models */,
+				8481B7052500E71700655FA9 /* utils */,
 				8454043224FFB08700139685 /* Lists.json */,
 				8454041B24FFA39600139685 /* AppDelegate.swift */,
 				8454041F24FFA39600139685 /* MenuViewController.swift */,
@@ -122,6 +129,8 @@
 		8454043424FFB09C00139685 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				84477B99252B0E83001E5DCD /* Task+CoreDataClass.swift */,
+				84477B9A252B0E83001E5DCD /* Task+CoreDataProperties.swift */,
 				8454043524FFB0D700139685 /* CategoryMenu.swift */,
 			);
 			path = models;
@@ -144,6 +153,14 @@
 				84625FD92521054D0014FA56 /* CategoryPickerPopupViewController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		84D3A1C82526117F0047B7C5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				84D3A1C9252611A90047B7C5 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,11 +240,14 @@
 				84625FD4252103B00014FA56 /* DatePickerPopupViewController.swift in Sources */,
 				8486626A2501A9DD00D2D989 /* MainMenuCell.swift in Sources */,
 				8454042024FFA39600139685 /* MenuViewController.swift in Sources */,
+				84D3A1CA252611A90047B7C5 /* CoreDataManager.swift in Sources */,
 				8454041C24FFA39600139685 /* AppDelegate.swift in Sources */,
 				8454042624FFA39600139685 /* ToDo.xcdatamodeld in Sources */,
 				848A866F251E2E910075669A /* CreateNewTaskViewController.swift in Sources */,
 				84625FD7252103EF0014FA56 /* Constants.swift in Sources */,
 				841D8A8725011ED60004B4A4 /* Interface.swift in Sources */,
+				84477B9C252B0E83001E5DCD /* Task+CoreDataProperties.swift in Sources */,
+				84477B9B252B0E83001E5DCD /* Task+CoreDataClass.swift in Sources */,
 				84625FDA2521054D0014FA56 /* CategoryPickerPopupViewController.swift in Sources */,
 				8446EC8E25021C7D001E3523 /* MenuItemView.swift in Sources */,
 				8446EC9225023236001E3523 /* HeaderMenuView.swift in Sources */,

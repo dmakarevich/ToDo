@@ -19,7 +19,7 @@ class MenuItemView: DesignableView {
     func set(menuItem item: CategoryMenu) {
         self.iconImage.image = UIImage(named: item.image)
         self.titleLabel.text = item.title
-        self.subtiteLabel.text = "0 tasks"
+        self.subtiteLabel.text = "\(item.count) tasks"
     }
 
     override init(frame: CGRect) {
