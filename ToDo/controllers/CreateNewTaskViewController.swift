@@ -10,6 +10,12 @@ import UIKit
 
 class CreateNewTaskViewController: UIViewController {
     //MARK: - Variables
+    private var date: Date = Date() {
+        didSet {
+            self.dateLabel.text = Utility.dateToString(date: date)
+        }
+    }
+
     @IBOutlet weak var taskNameView: UITextView!
     @IBOutlet weak var dateLabel: UITextField!
     @IBOutlet weak var categoryLabel: UITextField!
@@ -65,8 +71,9 @@ class CreateNewTaskViewController: UIViewController {
                 .instantiateViewController(withIdentifier: Constants.Storyboard.datePickerVC) as? DatePickerPopupViewController else {
             return
         }
-        vc.completionHandler = {[self] (date) in
-            self.dateLabel.text = Utility.dateToString(date: date)
+        vc.completionHandler = {[weak self] (date) in
+            guard let self = self else { return }
+            self.date = date ?? Date()
         }
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
