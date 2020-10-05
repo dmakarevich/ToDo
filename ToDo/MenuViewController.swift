@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MenuViewController: UIViewController {
     //MARK: - Variables
     private var menuItems = [CategoryMenu]()
-    
+
     private enum CollectionViewInsets {
         case top, left, bottom, right
         case itemsPerRow
@@ -43,17 +44,21 @@ class MenuViewController: UIViewController {
         }
 
         static func geEdgeInset() -> UIEdgeInsets {
-
             return sectionInsets
         }
     }
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            self.collectionView.dataSource = self
+            self.collectionView.delegate = self
+        }
+    }
 
     //MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.title = "Lists"
         NotificationCenter
             .default
@@ -63,12 +68,14 @@ class MenuViewController: UIViewController {
                          object: nil)
         Interface.sh.setup()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchTasks()
+    }
+
+    //MARK: - Selectors
     @objc func updateCollectionView() {
-        self.menuItems = Interface.sh.categories
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        self.collectionView.reloadData()
+        self.fetchTasks()
     }
 
     //MARK: - Actions
@@ -79,6 +86,33 @@ class MenuViewController: UIViewController {
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MenuViewController {
+    private func fetchTasks() {
+        let managedContext = CoreDataManager.sh.persistentContainer.viewContext
+        let fetch: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+            let tasks = try managedContext.fetch(fetch)
+            self.setCategoryTasksCount(by: tasks)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func setCategoryTasksCount(by tasks: [Task]) {
+        let itemsZeroTasks = Interface.sh.categories
+
+        self.menuItems = itemsZeroTasks.map({ (item) -> CategoryMenu in
+            let count: Int = tasks
+                .filter{ $0.category == item.title }
+                .count
+            return CategoryMenu(item: item, count: count)
+        })
+
+        self.menuItems[0].count = tasks.count
+        self.collectionView.reloadData()
     }
 }
 
