@@ -9,8 +9,14 @@
 import UIKit
 
 class CategoryPickerPopupViewController: UIViewController {
-    private var items: [CategoryMenu] = Interface.sh.categories
-    private var selectedRow = 1
+    private var items: [CategoryMenu] {
+        get {
+            var items = Interface.sh.categories
+            items.removeFirst()
+            return items
+        }
+    }
+    private var selectedRow = 0
     private let componentsCount = 1
     var completionHandler: ((CategoryMenu) -> ())?
     

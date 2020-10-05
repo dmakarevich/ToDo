@@ -46,13 +46,11 @@ class CreateNewTaskViewController: UIViewController {
 
     //MARK: - Selectors
     @objc func keybordWillShow(_ notification: Notification) {
-        let userInfo = (notification as NSNotification).userInfo!
-        guard let keyboardNSValue: NSValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        var keyboardFrame: CGRect = keyboardNSValue.cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        guard let userInfo = (notification as NSNotification).userInfo,
+              let keyboardRectangle = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
 
-        self.bottomCreateButtonConstraint.constant = keyboardFrame.height
-        self.scrollView.contentInset.bottom = -keyboardFrame.height
+        self.bottomCreateButtonConstraint.constant = keyboardRectangle.height
+        self.scrollView.contentInset.bottom = -keyboardRectangle.height
     }
 
     @objc func keybordWillHide(_ notification: Notification) {
