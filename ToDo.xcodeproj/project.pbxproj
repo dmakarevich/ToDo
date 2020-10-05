@@ -115,7 +115,6 @@
 				8481B7052500E71700655FA9 /* utils */,
 				8454043224FFB08700139685 /* Lists.json */,
 				8454041B24FFA39600139685 /* AppDelegate.swift */,
-				8454041F24FFA39600139685 /* MenuViewController.swift */,
 				8454042124FFA39600139685 /* Main.storyboard */,
 				8454042724FFA39900139685 /* Assets.xcassets */,
 				8454042924FFA39900139685 /* LaunchScreen.storyboard */,
@@ -148,6 +147,7 @@
 		848A866D251E2E160075669A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8454041F24FFA39600139685 /* MenuViewController.swift */,
 				848A866E251E2E910075669A /* CreateNewTaskViewController.swift */,
 				84625FD3252103B00014FA56 /* DatePickerPopupViewController.swift */,
 				84625FD92521054D0014FA56 /* CategoryPickerPopupViewController.swift */,
