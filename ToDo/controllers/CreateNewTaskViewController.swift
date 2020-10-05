@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateNewTaskViewController: UIViewController {
     //MARK: - Variables
@@ -93,6 +94,11 @@ class CreateNewTaskViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 
+    @IBAction func createButtonTapped(_ sender: Any) {
+        self.saveNewTask()
+        self.navigationController?.popViewController(animated: true)
+    }
+
     //MARK: - Utils
     private func addKeyboardShowListeners() {
         NotificationCenter
@@ -107,6 +113,15 @@ class CreateNewTaskViewController: UIViewController {
                          selector: #selector(keybordWillHide),
                          name: UIResponder.keyboardWillHideNotification,
                          object: nil)
+    }
+
+    private func saveNewTask() {
+        let context = CoreDataManager.sh.persistentContainer.viewContext
+        let task = Tasks(context: context)
+        task.title = self.taskNameView.text
+        task.date = self.date
+        task.category = self.categoryLabel.text
+        CoreDataManager.sh.saveContext(context: context)
     }
 
     private func setupNavigationBar() {
