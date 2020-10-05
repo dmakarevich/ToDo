@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Utility {
-    
+struct Utility {    
     //MARK: - Read and parsing json file
     static func readLocalJsonFile(forName name: String) -> Data? {
         do {

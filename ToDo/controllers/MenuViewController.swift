@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class MenuViewController: UIViewController {
     //MARK: - Variables
@@ -70,7 +69,7 @@ class MenuViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.fetchTasks()
+        self.updateCollectionView()
     }
 
     //MARK: - Selectors
@@ -91,14 +90,8 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController {
     private func fetchTasks() {
-        let managedContext = CoreDataManager.sh.persistentContainer.viewContext
-        let fetch: NSFetchRequest<Task> = Task.fetchRequest()
-        do {
-            let tasks = try managedContext.fetch(fetch)
-            self.setCategoryTasksCount(by: tasks)
-        } catch {
-            print(error.localizedDescription)
-        }
+        let tasks = CoreDataManager.shared.fetchEntities(fetch: Task.fetchRequest())
+        self.setCategoryTasksCount(by: tasks)
     }
 
     private func setCategoryTasksCount(by tasks: [Task]) {

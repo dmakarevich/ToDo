@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class CoreDataManager {
-    static let sh: CoreDataManager = CoreDataManager()
+    static let shared: CoreDataManager = CoreDataManager()
 
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
@@ -33,5 +33,17 @@ class CoreDataManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+
+    func fetchEntities<T: NSManagedObject>(fetch: NSFetchRequest<T>) -> [T] {
+        var tasks: [T] = []
+        let managedContext = self.persistentContainer.viewContext
+        do {
+            tasks = try managedContext.fetch(fetch)
+        } catch {
+            print(error.localizedDescription)
+        }
+
+        return tasks
     }
 }
