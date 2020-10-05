@@ -117,7 +117,7 @@ class CreateNewTaskViewController: UIViewController {
 
     private func saveNewTask() {
         let context = CoreDataManager.sh.persistentContainer.viewContext
-        let task = Tasks(context: context)
+        let task = Task(context: context)
         task.title = self.taskNameView.text
         task.date = self.date
         task.category = self.categoryLabel.text
