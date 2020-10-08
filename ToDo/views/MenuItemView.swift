@@ -16,10 +16,10 @@ class MenuItemView: DesignableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtiteLabel: UILabel!
     
-    func set(menuItem item: TDCategoryMenu) {
+    func set(menuItem item: CategoryMenu) {
         self.iconImage.image = UIImage(named: item.image)
         self.titleLabel.text = item.title
-        self.subtiteLabel.text = "0 tasks"
+        self.subtiteLabel.text = "\(item.count) tasks"
     }
 
     override init(frame: CGRect) {

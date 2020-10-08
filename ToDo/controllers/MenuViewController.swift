@@ -10,9 +10,8 @@ import UIKit
 
 class MenuViewController: UIViewController {
     //MARK: - Variables
-    private let fileName = "Lists"
-    private var menuItems = [TDCategoryMenu]()
-    
+    private var menuItems = [CategoryMenu]()
+
     private enum CollectionViewInsets {
         case top, left, bottom, right
         case itemsPerRow
@@ -44,38 +43,69 @@ class MenuViewController: UIViewController {
         }
 
         static func geEdgeInset() -> UIEdgeInsets {
-
             return sectionInsets
         }
     }
-    
+
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
         }
     }
-    
-    //MARK: - Life cycle method(s)
+
+    //MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = self.fileName
-        self.menuItems = self.getData(by: self.fileName)
+
+        self.navigationItem.title = "Lists"
+        NotificationCenter
+            .default
+            .addObserver(self,
+                         selector: #selector(updateCollectionView),
+                         name: Constants.NCNames.categories,
+                         object: nil)
+        Interface.sh.setup()
     }
-    
-    //MARK: - Get data method
-    private func getData(by name: String) -> [TDCategoryMenu] {
-        guard let jsonData = Utility.readLocalJsonFile(forName: name) else {
-            return []
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateCollectionView()
+    }
+
+    //MARK: - Selectors
+    @objc func updateCollectionView() {
+        self.fetchTasks()
+    }
+
+    //MARK: - Actions
+    @IBAction func addButtonTapped(_ sender: Any) {
+        guard let vc = self
+                .storyboard?
+                .instantiateViewController(withIdentifier: Constants.Storyboard.createNewTaskVC) as? CreateNewTaskViewController else {
+            return
         }
-        let categoryList = Utility.parseJson(data: jsonData, ofType: TDCategoryList.self)
-        
-        guard let menu = categoryList?.lists else {
-            return []
-        }
-        
-        return menu
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MenuViewController {
+    private func fetchTasks() {
+        let tasks = CoreDataManager.shared.fetchEntities(fetch: Task.fetchRequest())
+        self.setCategoryTasksCount(by: tasks)
+    }
+
+    private func setCategoryTasksCount(by tasks: [Task]) {
+        let itemsZeroTasks = Interface.sh.categories
+
+        self.menuItems = itemsZeroTasks.map({ (item) -> CategoryMenu in
+            let count: Int = tasks
+                .filter{ $0.category == item.title }
+                .count
+            return CategoryMenu(item: item, count: count)
+        })
+
+        self.menuItems[0].count = tasks.count
+        self.collectionView.reloadData()
     }
 }
 
